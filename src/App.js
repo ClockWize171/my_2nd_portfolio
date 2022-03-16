@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { Box, useMediaQuery } from '@chakra-ui/react';
+import { Home, AboutMe, Projects, NotFound } from './containers'
+import { Navbar, ThreeJsRoom, Footer } from './components';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
+
+  // Screen Size
+  const [isNotSmallerScreen] = useMediaQuery([
+    "(min-width: 1000px)",
+    "(min-width:588px)"
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Box
+      h={isNotSmallerScreen ? "100%" : '100%'}
+    >
+      <Navbar />
+      <ThreeJsRoom />
+      <BrowserRouter>
+        <Routes>
+          <Route path='*' element={<NotFound />} />
+          <Route path='/' exact element={<Home />}></Route>
+          <Route path='/aboutme' element={<AboutMe />}></Route>
+          <Route path='/projects' element={<Projects />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </Box>
+
   );
 }
+
 
 export default App;
