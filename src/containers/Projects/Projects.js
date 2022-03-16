@@ -9,7 +9,8 @@ import {
   useColorMode,
   Badge,
   Icon,
-  Link
+  Link,
+  Spinner
 } from '@chakra-ui/react'
 import { FaLink } from "react-icons/fa";
 import { motion } from 'framer-motion'
@@ -57,9 +58,11 @@ const Project = () => {
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ duration: 0.5 }}>
                 <Box
-                  bgColor={isDark ? "#055460" : "#dcf2f2"}
+
+                  bgColor={isDark ? "#055460" : "#c3e0e5"}
                   borderRadius='lg'>
                   <Box
+                    h="100%"
                     padding={5}
                     borderRadius='lg'
                     boxShadow="xl">
@@ -100,10 +103,8 @@ const Project = () => {
           </>
         ) : (
           <>
-            <Box>
-              <Text textAlign='center' fontSize='4xl' fontWeight='semibold'>
-                Loading...
-              </Text>
+            <Box align='center'>
+              <Spinner size='xl' />
             </Box>
           </>
         )}

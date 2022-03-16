@@ -113,7 +113,7 @@ const Navbar = () => {
                         paddingLeft={3}>
                         <IconButton
                             onClick={onOpen}
-                            // borderRadius="sm"
+                            borderRadius="sm"
                             variant="outline"
                             colorScheme='cyan'
                             aria-label='HamburgerIcon'
@@ -123,34 +123,46 @@ const Navbar = () => {
                         <Drawer onClose={onClose} isOpen={isOpen}>
                             <DrawerOverlay />
                             <DrawerContent bgColor={isDark ? "cyan.900" : "cyan.50"}>
-                                <DrawerCloseButton />
+                                <motion.div
+                                    whileTap={{ scale: 0.98 }}>
+                                    <DrawerCloseButton
+                                        borderRadius='sm'
+                                        border='1px'
+                                        color={isDark ? "cyan.200" : 'cyan.600'} />
+                                </motion.div>
                                 <DrawerBody>
                                     <Stack align="center" paddingTop={10}>
                                         <Link
                                             style={{ textDecoration: "none" }}
                                             href='/aboutme'>
-                                            <Button
-                                                w="200px"
-                                                href="/aboutme"
-                                                fontSize="md"
-                                                borderRadius="sm"
-                                                colorScheme='cyan'
-                                                variant='outline'>
-                                                &lt;about_me /&gt;
-                                            </Button>
+                                            <motion.div
+                                                whileTap={{ scale: 0.9 }}>
+                                                <Button
+                                                    w="200px"
+                                                    href="/aboutme"
+                                                    fontSize="md"
+                                                    borderRadius="sm"
+                                                    colorScheme='cyan'
+                                                    variant='outline'>
+                                                    &lt;about_me /&gt;
+                                                </Button>
+                                            </motion.div>
                                         </Link>
                                         <Link
                                             style={{ textDecoration: "none" }}
                                             href='/projects'>
-                                            <Button
-                                                marginTop={4}
-                                                w="200px"
-                                                fontSize="md"
-                                                borderRadius="sm"
-                                                colorScheme='cyan'
-                                                variant='outline'>
-                                                &lt;projects /&gt;
-                                            </Button>
+                                            <motion.div
+                                                whileTap={{ scale: 0.9 }}>
+                                                <Button
+                                                    marginTop={4}
+                                                    w="200px"
+                                                    fontSize="md"
+                                                    borderRadius="sm"
+                                                    colorScheme='cyan'
+                                                    variant='outline'>
+                                                    &lt;projects /&gt;
+                                                </Button>
+                                            </motion.div>
                                         </Link>
                                     </Stack>
                                 </DrawerBody>

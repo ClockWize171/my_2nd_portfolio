@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { motion } from 'framer-motion';
 import { Box, Text, Container, Flex, IconButton, } from '@chakra-ui/react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaDiscord, FaRegEnvelope } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaDiscord, FaRegEnvelope, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const getYear = () => {
@@ -51,6 +51,18 @@ const Footer = () => {
                 variant='solid'
                 aria-label='find_on_instagram'
                 icon={<FaInstagram />} />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}>
+              <IconButton
+                onClick={() => window.open("https://github.com/ClockWize171")}
+                mr='2'
+                borderRadius="full"
+                variant='solid'
+                aria-label='find_on_instagram'
+                icon={<FaGithub />} />
             </motion.div>
 
             <motion.div

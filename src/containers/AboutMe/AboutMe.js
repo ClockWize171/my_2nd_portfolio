@@ -57,7 +57,7 @@ const AboutMe = () => {
             <Box
               marginTop={3}
               lineHeight={8}
-              bg={isDark ? 'cyan.800' : 'green.50'}
+              bg={isDark ? 'cyan.800' : '#c3e0e5'}
               p={5}
               rounded='md'
               boxShadow="inner">
@@ -95,7 +95,7 @@ const AboutMe = () => {
                 borderRadius="sm"
                 variant='outline'
                 colorScheme="cyan">
-                &lt;Resume <Icon ml={1} as={BsLink45Deg}  /> /&gt;
+                &lt;Resume <Icon ml={1} as={BsLink45Deg} /> /&gt;
               </Button>
             </motion.div>
           </Box>
@@ -130,10 +130,17 @@ const AboutMe = () => {
               className="inner-carousel">
               {logos.map((logo) => {
                 return (
-                  <motion.div key={logo.id}>
+                  <motion.div
+                    style={{
+                      paddingBottom: "2vh"
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.45 }}
+                    key={logo.id}>
                     <Box padding={3}>
                       <Image
-                        bg={isDark ? 'cyan.800' : 'green.50'}
+                        bg={isDark ? 'cyan.800' : '#c3e0e5'}
                         fallbackSrc='https://via.placeholder.com/240'
                         padding={7}
                         borderRadius="3xl"
@@ -154,7 +161,7 @@ const AboutMe = () => {
           </motion.div>
         </Box>
       </Box>
-    </Container >
+    </Container>
   )
 }
 

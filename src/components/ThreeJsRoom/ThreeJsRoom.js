@@ -12,7 +12,7 @@ const ThreeJsRoom = () => {
       <>
         <primitive
           object={gltf.scene}
-          scale={2.6} />
+          scale={2.5} />
       </>
     );
   };

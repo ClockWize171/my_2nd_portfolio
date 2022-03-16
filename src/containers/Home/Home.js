@@ -59,7 +59,7 @@ const Home = () => {
               transition={{ duration: 0.35 }}>
               <Box
                 lineHeight={8}
-                bg={isDark ? 'cyan.800' : 'green.50'}
+                bg={isDark ? 'cyan.800' : '#c3e0e5'}
                 p={5}
                 rounded='md'
                 boxShadow="inner">
