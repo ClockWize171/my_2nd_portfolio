@@ -99,67 +99,7 @@ const Footer = () => {
                 icon={<FaDiscord />} />
             </motion.div>
           </Flex>
-          {/* <motion.div
-            style={{
-              width: "200px"
-            }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 1 }}> */}
-          {/* <Button leftIcon={<SiMinutemailer />} borderRadius='sm'  variant='outline'>
-            &lt;send_email/&gt;
-          </Button> */}
-          {/* </motion.div> */}
         </Box>
-
-        {/* social group button */}
-        {/* <Box paddingTop={4}>
-          <ButtonGroup size='md' isAttached variant='outline'>
-            <motion.div
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 1 }}>
-              <IconButton
-                mr='2'
-                borderRadius="full"
-                variant='outline'
-                colorScheme="cyan"
-                aria-label='Send email'
-                icon={<FaFacebook />} />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 1 }}>
-              <IconButton
-                mr='2'
-                borderRadius="full"
-                variant='outline'
-                colorScheme='cyan'
-                aria-label='Send email'
-                icon={<FaInstagram />} />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 1 }}>
-              <IconButton
-                mr='2'
-                borderRadius="full"
-                variant='outline'
-                colorScheme='cyan'
-                aria-label='Send email'
-                icon={<FaLinkedin />} />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 1 }}>
-              <IconButton
-                mr='2'
-                borderRadius="full"
-                variant='outline'
-                colorScheme='cyan'
-                aria-label='Send email'
-                icon={<FaDiscord />} />
-            </motion.div>
-          </ButtonGroup>
-        </Box> */}
       </Box>
     </Container>
   )
