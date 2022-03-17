@@ -28,9 +28,8 @@ const AboutMe = () => {
       const scrollWidth = carousel.current.scrollWidth
       const offsetWidth = carousel.current.offsetWidth
       setWidth(scrollWidth - offsetWidth)
-    }, 3000)
+    }, 1000)
   }, [carousel])
-  console.log(width)
 
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
