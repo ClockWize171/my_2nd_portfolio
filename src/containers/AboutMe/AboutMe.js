@@ -24,11 +24,11 @@ const AboutMe = () => {
 
 
   useEffect(() => {
-    // setTimeout(() => {
+    setTimeout(() => {
       const scrollWidth = carousel.current.scrollWidth
       const offsetWidth = carousel.current.offsetWidth
       setWidth(scrollWidth - offsetWidth)
-    // }, 1000)
+    }, 3000)
   }, [carousel])
   console.log(width)
 
