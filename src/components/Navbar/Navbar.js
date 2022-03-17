@@ -50,9 +50,9 @@ const Navbar = () => {
                             whileTap={{ scale: 0.9 }}>
                             <Link style={{ textDecoration: 'none' }} href='/'>
                                 <Text
-                                    fontSize="xl"
+                                    fontSize={isNotSmallerScreen ? "xl" : "lg"}
                                     fontWeight="bold">
-                                    &lt;thet_min_htin /&gt;
+                                    &lt;thet_min_htin/&gt;
                                 </Text>
                             </Link>
                         </motion.div>
