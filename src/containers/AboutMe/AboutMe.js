@@ -122,7 +122,7 @@ const AboutMe = () => {
           <Icon mt={3} w={10} h={10} as={BsArrowRight} />
         </Box>
 
-        <Box paddingTop={10}>
+        <Box paddingTop={5}>
           <motion.div
             ref={carousel}
             className='carousel'
@@ -137,8 +137,8 @@ const AboutMe = () => {
                     style={{
                       paddingBottom: "2vh"
                     }}
-                    whileInView={{ x: [100, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.35 }}
+                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5 }}
                     key={logo.id}>
                     <Box ml={3} padding={3}>
                       <Image
