@@ -19,7 +19,7 @@ const AboutMe = () => {
 
   // Carousel Settings
   const [width, setWidth] = useState(0)
-  const carousel = useRef();
+  const carousel = useRef(null);
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
