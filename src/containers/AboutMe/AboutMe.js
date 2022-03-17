@@ -25,6 +25,7 @@ const AboutMe = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
   }, [])
 
+  console.log(width)
 
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
@@ -122,7 +123,8 @@ const AboutMe = () => {
           <motion.div
             ref={carousel}
             className='carousel'
-            whileTap={{ cursor: "grabbing" }}>
+            whileTap={{ cursor: "grabbing" }}
+            >
             <motion.div
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
@@ -133,7 +135,7 @@ const AboutMe = () => {
                     style={{
                       paddingBottom: "2vh"
                     }}
-                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                    // whileInView={{ y: [100, 0], opacity: [0, 1] }}
                     transition={{ duration: 0.5 }}
                     key={logo.id}>
                     <Box padding={3}>
