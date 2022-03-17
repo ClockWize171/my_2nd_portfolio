@@ -22,7 +22,8 @@ import {
     Link
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion';
-import { BsMoonFill, BsSunFill } from 'react-icons/bs'
+import { RiMoonClearFill } from "react-icons/ri";
+import { HiLightBulb } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
@@ -36,6 +37,7 @@ const Navbar = () => {
 
     //  Open Close Drawer
     const { isOpen, onOpen, onClose } = useDisclosure()
+
 
     return (
         <Container maxW="container.xl">
@@ -99,25 +101,30 @@ const Navbar = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.9 }}>
                             <IconButton
-                                // color={isDark? "yellow.500" : "purple"}
+                                color={isDark ? "#ffc87c" : "#c573ff"}
                                 borderRadius="3xl"
-                                colorScheme='cyan'
+                                border='1px'
+                                borderColor={isDark ? "#9DECF9" : "#00A3C4"}
                                 aria-label='SunIcon'
                                 variant="outline"
                                 onClick={toggleColorMode}
-                                icon={isDark ? <BsSunFill /> : <BsMoonFill />} />
+                                icon={isDark ? <HiLightBulb /> : <RiMoonClearFill />} />
                         </motion.div>
                     </Box>
                     <Box
                         display={isNotSmallerScreen ? "none" : "flex"}
                         paddingLeft={3}>
-                        <IconButton
-                            onClick={onOpen}
-                            borderRadius="sm"
-                            variant="outline"
-                            colorScheme='cyan'
-                            aria-label='HamburgerIcon'
-                            icon={<GiHamburgerMenu />} />
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}>
+                            <IconButton
+                                onClick={onOpen}
+                                borderRadius="sm"
+                                variant="outline"
+                                colorScheme='cyan'
+                                aria-label='HamburgerIcon'
+                                icon={<GiHamburgerMenu />} />
+                        </motion.div>
 
                         {/* Drawer Component */}
                         <Drawer onClose={onClose} isOpen={isOpen}>

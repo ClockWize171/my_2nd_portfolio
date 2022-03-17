@@ -1,43 +1,53 @@
 const IMAGES = [
     {
         id: 1,
-        image: 'logos/react.png'
+        image: 'logos/react.png',
+        title: 'React'
     },
     {
         id: 2,
-        image: 'logos/chakra-ui.png'
+        image: 'logos/chakra-ui.png',
+        title: 'Chakra-UI'
     },
     {
         id: 3,
-        image: 'logos/linux.png'
+        image: 'logos/linux.png',
+        title: 'Linux'
     },
     {
         id: 4,
-        image: 'logos/docker.png'
+        image: 'logos/docker.png',
+        title: 'Docker'
     },
     {
         id: 5,
-        image: 'logos/django.png'
+        image: 'logos/django.png',
+        title: 'Django'
     },
     {
         id: 6,
-        image: 'logos/tensorflow.png'
+        image: 'logos/tensorflow.png',
+        title: 'Tensorflow'
     },
     {
         id: 7,
-        image: 'logos/python.png'
+        image: 'logos/python.png',
+        title: 'Python'
     },
     {
         id: 8,
-        image: 'logos/js.png'
+        image: 'logos/js.png',
+        title: 'JavaScript'
     },
     {
         id: 9,
-        image: 'logos/css3.png'
+        image: 'logos/css3.png',
+        title: 'CSS3'
     },
     {
         id: 10,
-        image: 'logos/html5.png'
+        image: 'logos/html5.png',
+        title: 'HTML5'
     }
 ]
 

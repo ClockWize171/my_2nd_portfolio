@@ -23,7 +23,6 @@ const ThreeJsRoom = () => {
         {/* Ambient Light illuminates lights for all objects */}
         <ambientLight intensity={0.3} />
         {/* Diretion light */}
-        {/* <directionalLight position={[-10, -10, -5]} intensity={1} /> */}
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <directionalLight
           castShadow
@@ -53,7 +52,6 @@ const ThreeJsRoom = () => {
 
   function RotatingRoom() {
     const ref = useRef();
-    // useFrame(()=> (ref.current.rotation.y -= 0.009))
     useFrame(({ clock }) => {
       const a = clock.getElapsedTime();
       ref.current.rotation.y = a * 0.35;
