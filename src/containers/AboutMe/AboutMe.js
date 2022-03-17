@@ -21,10 +21,15 @@ const AboutMe = () => {
   const [width, setWidth] = useState(0)
   const carousel = useRef(null);
 
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
-  }, [])
 
+
+  useEffect(() => {
+    // setTimeout(() => {
+      const scrollWidth = carousel.current.scrollWidth
+      const offsetWidth = carousel.current.offsetWidth
+      setWidth(scrollWidth - offsetWidth)
+    // }, 1000)
+  }, [carousel])
   console.log(width)
 
   // Toggle Color Mode 
@@ -124,7 +129,7 @@ const AboutMe = () => {
             ref={carousel}
             className='carousel'
             whileTap={{ cursor: "grabbing" }}
-            >
+          >
             <motion.div
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
