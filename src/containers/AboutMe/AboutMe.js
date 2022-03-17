@@ -10,7 +10,7 @@ import {
   Image,
 } from '@chakra-ui/react'
 import './AboutMe.css'
-import { BsLink45Deg } from "react-icons/bs";
+import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
 import { motion } from 'framer-motion'
 import logos from '../../assets/images/Logo'
 import hello from '../../assets/images/undraw_hello_re_3evm.svg'
@@ -20,8 +20,6 @@ const AboutMe = () => {
   // Carousel Settings
   const [width, setWidth] = useState(0)
   const carousel = useRef(null);
-
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -119,16 +117,16 @@ const AboutMe = () => {
           <Text
             fontSize='lg'
             fontWeight='medium'>
-            Some technologies that I'm currently experiencing with:
+            Some technologies that I'm currently working on:
           </Text>
+          <Icon mt={3} w={10} h={10} as={BsArrowRight} />
         </Box>
 
         <Box paddingTop={10}>
           <motion.div
             ref={carousel}
             className='carousel'
-            whileTap={{ cursor: "grabbing" }}
-          >
+            whileTap={{ cursor: "grabbing" }}>
             <motion.div
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
@@ -139,10 +137,10 @@ const AboutMe = () => {
                     style={{
                       paddingBottom: "2vh"
                     }}
-                    // whileInView={{ y: [100, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.5 }}
+                    whileInView={{ x: [100, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.35 }}
                     key={logo.id}>
-                    <Box padding={3}>
+                    <Box ml={3} padding={3}>
                       <Image
                         bg={isDark ? 'cyan.800' : '#c3e0e5'}
                         fallbackSrc='https://via.placeholder.com/240'

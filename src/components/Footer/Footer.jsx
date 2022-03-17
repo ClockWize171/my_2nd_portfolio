@@ -1,13 +1,17 @@
 import React from 'react'
 import './Footer.css'
 import { motion } from 'framer-motion';
-import { Box, Text, Container, Flex, IconButton, } from '@chakra-ui/react'
+import { Box, Text, Container, Flex, IconButton, useMediaQuery } from '@chakra-ui/react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaDiscord, FaRegEnvelope, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const getYear = () => {
     return new Date().getFullYear();
   }
+
+  // Screen Size
+  const [isNotSmallerScreen] = useMediaQuery("(min-width:588px)");
+
   return (
     <Container pt={9} maxW="container.lg">
       <Box
@@ -22,6 +26,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("mailto:takashiaoyama171@gmail.com")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
@@ -34,6 +39,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("https://www.facebook.com/takashi.san.589")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
@@ -46,6 +52,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("https://www.instagram.com/min_htin_171/")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
@@ -58,6 +65,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("https://github.com/ClockWize171")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
@@ -70,6 +78,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("https://www.linkedin.com/in/thet-min-htin-30a657200/")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
@@ -82,6 +91,7 @@ const Footer = () => {
               whileTap={{ scale: 0.9 }}>
               <IconButton
                 onClick={() => window.open("https://discord.gg/d9afQ4KJ")}
+                size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"
                 variant='solid'
