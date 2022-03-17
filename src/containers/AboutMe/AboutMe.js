@@ -133,8 +133,8 @@ const AboutMe = () => {
                     style={{
                       paddingBottom: "2vh"
                     }}
-                    whileInView={{ x: [100, 0], opacity: [0, 1] }}
-                    transition={{ duration: 1 }}
+                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.5 }}
                     key={logo.id}>
                     <Box padding={3}>
                       <Image
