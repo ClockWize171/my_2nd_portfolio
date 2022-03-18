@@ -8,6 +8,7 @@ import {
   Button,
   Icon,
   Image,
+  useMediaQuery
 } from '@chakra-ui/react'
 import './AboutMe.css'
 import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
@@ -32,6 +33,9 @@ const AboutMe = () => {
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
   const isDark = colorMode === "dark"
+
+  // Screen Size
+  const [isNotSmallerScreen] = useMediaQuery("(min-width:588px)");
 
   return (
     <Container paddingTop={10} maxW="container.lg">
@@ -119,7 +123,10 @@ const AboutMe = () => {
             fontWeight='medium'>
             Some technologies that I'm currently working on:
           </Text>
-          <Icon mt={3} w={10} h={10} as={BsArrowRight} />
+          <Box >
+            <Icon className='right_arrow' mt={3} w={10} h={10} as={BsArrowRight} />
+          </Box>
+
         </Box>
 
         <Box paddingTop={5}>
@@ -140,7 +147,9 @@ const AboutMe = () => {
                     whileInView={{ y: [100, 0], opacity: [0, 1] }}
                     transition={{ duration: 0.5 }}
                     key={logo.id}>
-                    <Box ml={3} padding={3}>
+                    <Box
+                      ml={isNotSmallerScreen ? 3 : 0}
+                      padding={3}>
                       <Image
                         bg={isDark ? 'cyan.800' : '#c3e0e5'}
                         fallbackSrc='https://via.placeholder.com/240'

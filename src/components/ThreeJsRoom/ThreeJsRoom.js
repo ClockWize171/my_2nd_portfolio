@@ -44,7 +44,7 @@ const ThreeJsRoom = () => {
 
   const LoadingSpinner = () => {
     return (
-      <Box align='center'>
+      <Box pt='10vh' align='center'>
         <Spinner size='xl' />
       </Box>
     )
@@ -65,7 +65,7 @@ const ThreeJsRoom = () => {
   }
 
   return (
-    <Container maxW='container.sm'>
+    <Container pt={5} maxW='container.sm'>
       <Suspense fallback={<LoadingSpinner />}>
         <Canvas
           camera={{ position: [3, 0, 5] }}

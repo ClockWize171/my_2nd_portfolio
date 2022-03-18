@@ -1,8 +1,31 @@
-.inner-carousel{
-    display: flex;
+.inner-carousel {
+  display: flex;
 }
 
-.carousel{
-    cursor: grab;
-    overflow: hidden;
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+}
+
+.right_arrow {
+  position: relative;
+  -webkit-animation: right_mover 1s infinite alternate;
+  animation: right_mover 1s infinite alternate;
+}
+
+@-webkit-keyframes right_mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-45px);
+  }
+}
+@keyframes right_mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-45px);
+  }
 }

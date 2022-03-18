@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { urlFor, client } from '../../client'
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 import {
   Container,
   Text,
@@ -105,6 +106,7 @@ const Project = () => {
           <Spinner size='xl' />
         </Box>
       )}
+      <ScrollToTop/>
     </Container>
   )
 }
