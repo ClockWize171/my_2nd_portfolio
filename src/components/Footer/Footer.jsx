@@ -16,7 +16,7 @@ const Footer = () => {
     <Container pt={9} maxW="container.lg">
       <Box
         textAlign="center">
-        <Text fontSize="sm"> Crafted by <strong>Thet Min Htin</strong> © {getYear()} All Rights Reserved.</Text>
+        <Text fontSize="sm">© <strong>Thet Min Htin</strong> {getYear()} All Rights Reserved.</Text>
       </Box>
       <Box pt={4} pb={4} align='center'>
         <Box>
