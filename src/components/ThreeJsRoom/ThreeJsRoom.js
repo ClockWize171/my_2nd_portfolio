@@ -1,4 +1,4 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, memo } from 'react'
 import { Container, Spinner, Box, Divider, useColorModeValue } from '@chakra-ui/react'
 import { Canvas, useLoader, useFrame } from "@react-three/fiber"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -82,4 +82,4 @@ const ThreeJsRoom = () => {
   )
 }
 
-export default ThreeJsRoom
+export default memo(ThreeJsRoom)

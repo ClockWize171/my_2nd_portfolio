@@ -2,7 +2,6 @@ import React from 'react'
 import {
     Breadcrumb,
     BreadcrumbItem,
-    BreadcrumbLink,
     Drawer,
     DrawerBody,
     DrawerOverlay,
@@ -18,8 +17,8 @@ import {
     IconButton,
     useColorMode,
     useMediaQuery,
-    Link
 } from '@chakra-ui/react'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 import { motion } from 'framer-motion';
 import { RiMoonClearFill } from "react-icons/ri";
@@ -33,13 +32,14 @@ const Navbar = () => {
     const isDark = colorMode === "dark"
 
     // Screen Size
-    const [isNotSmallerScreen] = useMediaQuery("(min-width:588px)");
+    const [isNotSmallerScreen] = useMediaQuery("(min-width:713px)");
 
     //  Open Close Drawer
     const { isOpen, onOpen, onClose } = useDisclosure()
 
 
     return (
+
         <Flex
             w='100%'
             className='navbar'>
@@ -47,14 +47,14 @@ const Navbar = () => {
                 <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}>
-                    <Link style={{ textDecoration: 'none' }} href='/'>
+                    <NavLink style={{ textDecoration: 'none' }} to='/'>
                         <Text
                             mt={1}
                             fontSize={isNotSmallerScreen ? "xl" : "xl"}
                             fontWeight="bold">
                             &lt;thet_min_htin/&gt;
                         </Text>
-                    </Link>
+                    </NavLink>
                 </motion.div>
             </Box>
             <Spacer />
@@ -64,36 +64,32 @@ const Navbar = () => {
                 paddingLeft={3}>
                 <Breadcrumb separator=" ">
                     <BreadcrumbItem>
-                        <BreadcrumbLink
-                            style={{ textDecoration: "none" }}
-                            href='/aboutme'>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}>
+                            <NavLink to='/aboutme'>
                                 <Button
                                     borderRadius="sm"
                                     colorScheme='cyan'
                                     variant='outline'>
                                     &lt;about_me /&gt;
                                 </Button>
-                            </motion.div>
-                        </BreadcrumbLink>
+                            </NavLink>
+                        </motion.div>
                     </BreadcrumbItem>
                     <BreadcrumbItem>
-                        <BreadcrumbLink
-                            style={{ textDecoration: "none" }}
-                            href='/projects'>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}>
+                            <NavLink to='/projects'>
                                 <Button
                                     borderRadius="sm"
                                     colorScheme='cyan'
                                     variant='outline'>
                                     &lt;projects /&gt;
                                 </Button>
-                            </motion.div>
-                        </BreadcrumbLink>
+                            </NavLink>
+                        </motion.div>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Box>
@@ -128,7 +124,7 @@ const Navbar = () => {
                         icon={<GiHamburgerMenu />} />
                 </motion.div>
             </Box>
-            {/* Drawer Component */}
+
             <Drawer onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent bgColor={isDark ? "cyan.900" : "cyan.50"}>
@@ -141,14 +137,14 @@ const Navbar = () => {
                     </motion.div>
                     <DrawerBody>
                         <Stack align="center" paddingTop={10}>
-                            <Link
+                            <NavLink
+                                onClick={onClose}
                                 style={{ textDecoration: "none" }}
-                                href='/aboutme'>
+                                to='/aboutme'>
                                 <motion.div
                                     whileTap={{ scale: 0.9 }}>
                                     <Button
                                         w="200px"
-                                        href="/aboutme"
                                         fontSize="md"
                                         borderRadius="sm"
                                         colorScheme='cyan'
@@ -156,10 +152,11 @@ const Navbar = () => {
                                         &lt;about_me /&gt;
                                     </Button>
                                 </motion.div>
-                            </Link><br />
-                            <Link
+                            </NavLink><br />
+                            <NavLink
+                                onClick={onClose}
                                 style={{ textDecoration: "none" }}
-                                href='/projects'>
+                                to='/projects'>
                                 <motion.div
                                     whileTap={{ scale: 0.9 }}>
                                     <Button
@@ -171,7 +168,7 @@ const Navbar = () => {
                                         &lt;projects /&gt;
                                     </Button>
                                 </motion.div>
-                            </Link>
+                            </NavLink>
                         </Stack>
                     </DrawerBody>
                 </DrawerContent>

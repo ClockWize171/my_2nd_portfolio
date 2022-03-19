@@ -21,9 +21,9 @@ function App() {
     <Box
       h={isNotSmallerScreen ? "100%" : '100%'}
     >
-      <Navbar />
       <ThreeJsRoom />
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path='*' element={<NotFound />} />
           <Route path='/' exact element={<Home />}></Route>
