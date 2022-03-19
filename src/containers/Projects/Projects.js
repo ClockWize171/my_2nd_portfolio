@@ -42,11 +42,16 @@ const Project = () => {
   const handleProjectFilter = (item) => {
 
     setActiveFilter(item);
-    if (item === 'All') {
-      setFilterWork(projects)
-    } else {
-      setFilterWork(projects.filter((project) => project.tags.includes(item)))
-    }
+
+    setTimeout(() => {
+
+      if (item === 'All') {
+        setFilterWork(projects)
+      } else {
+        setFilterWork(projects.filter((project) => project.tags.includes(item)))
+      }
+    }, 500)
+
   }
 
   // Change Color For Mode 
@@ -101,7 +106,7 @@ const Project = () => {
             columns={[1, null, 2]}
             spacing='50px'>
             {filterWork.map((project, index) => (
-              <motion.div
+              <motion.button
                 key={project.title + index}
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ duration: 0.75 }}>
@@ -119,7 +124,7 @@ const Project = () => {
                         w='full'
                         h='240px'
                         src={urlFor(project.imgUrl)}
-                        fallbackSrc="https://via.placeholder.com/240"
+                        // fallbackSrc="https://via.placeholder.com/240"
                         alt='Not Found'
                       />
                     </Box>
@@ -148,7 +153,7 @@ const Project = () => {
                     </Box>
                   </Box>
                 </Box>
-              </motion.div>
+              </motion.button>
             ))}
           </SimpleGrid>
         </>
@@ -156,9 +161,10 @@ const Project = () => {
         <Box pt={8} align='center'>
           <Spinner size='xl' />
         </Box>
-      )}
+      )
+      }
       <ScrollToTop />
-    </Container>
+    </Container >
   )
 }
 
