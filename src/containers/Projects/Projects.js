@@ -89,6 +89,7 @@ const Project = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}>
                     <BreadcrumbLink
+                      fontWeight="bold"
                       padding={1}
                       borderWidth={activeFilter === item ? '3px' : '0px'}
                       onClick={() => handleProjectFilter(item)}>
