@@ -14,7 +14,7 @@ import {
   Spinner,
   Breadcrumb,
   BreadcrumbItem,
-  Button,
+  BreadcrumbLink,
   useMediaQuery
 } from '@chakra-ui/react'
 import { FaLink } from "react-icons/fa";
@@ -81,20 +81,19 @@ const Project = () => {
       </Box>
       {isLoading ? (
         <>
-          <Box pt={5} align='center'>
-            <Breadcrumb separator=" " >
-              {['All', 'Data Science', 'Web Application', 'Python'].map((item, index) => (
+          <Box pt={2} align='center'>
+            <Breadcrumb separator="/" >
+              {['All', 'Data Science', 'Web Application', 'Python', 'React'].map((item, index) => (
                 <BreadcrumbItem pt={5} key={index}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}>
-                    <Button
-                      borderRadius='sm'
-                      colorScheme='cyan'
-                      variant={activeFilter === item ? 'solid' : 'outline'}
+                    <BreadcrumbLink
+                      padding={1}
+                      borderWidth={activeFilter === item ? '3px' : '0px'}
                       onClick={() => handleProjectFilter(item)}>
                       {item}
-                    </Button>
+                    </BreadcrumbLink>
                   </motion.div>
                 </BreadcrumbItem>
               ))}
@@ -106,7 +105,7 @@ const Project = () => {
             columns={[1, null, 2]}
             spacing='50px'>
             {filterWork.map((project, index) => (
-              <motion.button
+              <motion.div
                 key={project.title + index}
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ duration: 0.75 }}>
@@ -129,6 +128,7 @@ const Project = () => {
                       />
                     </Box>
                     <Box
+                      textAlign="left"
                       paddingTop={3}>
                       <Link
                         _hover={{ color: 'cyan.300', textDecoration: 'underline' }}
@@ -140,7 +140,14 @@ const Project = () => {
                       </Link>
                       <br />
                       <Badge fontSize="0.8rem" variant="subtle" mt='2' colorScheme='green'>
-                        {project.tags}
+                        {project.tags[0]}
+                      </Badge>
+                      <Badge
+                        fontSize="0.8rem"
+                        variant="subtle"
+                        mt='2' ml={2}
+                        colorScheme={project.tags[1] === 'Python' ? 'yellow' : 'cyan'}>
+                        {project.tags[1]}
                       </Badge>
                       <Text
                         fontSize={isNotSmallerScreen ? "lg" : "md"}
@@ -153,7 +160,7 @@ const Project = () => {
                     </Box>
                   </Box>
                 </Box>
-              </motion.button>
+              </motion.div>
             ))}
           </SimpleGrid>
         </>
