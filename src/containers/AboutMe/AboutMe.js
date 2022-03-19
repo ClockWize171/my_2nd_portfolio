@@ -47,7 +47,7 @@ const AboutMe = () => {
             marginRight="5vh">
             <Box
               align="center"
-              fontSize="2xl"
+              fontSize={isNotSmallerScreen ? "2xl" : "xl"}
               fontWeight="bold">
               <Text>
                 &lt;about_me?/&gt;
@@ -66,7 +66,7 @@ const AboutMe = () => {
                 <Text
                   textAlign="center"
                   fontWeight="medium"
-                  fontSize="lg">
+                  fontSize={isNotSmallerScreen ? "lg" : "md"}>
                   &lt;Welcome mate 😃, I am Burmese and from Myanmar(Yangon-based).
                   I emphasized professionalism in IT fields. I did nearly most parts of the IT fields such as web development, scripting, networking, system administration,
                   machine learning and etc. /&gt;
@@ -112,14 +112,14 @@ const AboutMe = () => {
       <Box paddingTop={10}>
         <Box align='center'>
           <Text
-            fontSize='2xl'
+            fontSize={isNotSmallerScreen ? "2xl" : "xl"}
             fontWeight='bold'>
             &lt;What I Can Do? /&gt;
           </Text>
         </Box>
         <Box paddingTop={5} align='center'>
           <Text
-            fontSize='lg'
+            fontSize={isNotSmallerScreen ? "lg" : "md"}
             fontWeight='medium'>
             Some technologies that I'm currently working on:
           </Text>

@@ -14,7 +14,8 @@ import {
   Spinner,
   Breadcrumb,
   BreadcrumbItem,
-  Button
+  Button,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { FaLink } from "react-icons/fa";
 import { motion } from 'framer-motion'
@@ -52,15 +53,24 @@ const Project = () => {
   const { colorMode } = useColorMode()
   const isDark = colorMode === "dark"
 
+  // Screen Size
+  const [isNotSmallerScreen] = useMediaQuery([
+    "(min-width: 1000px)",
+    "(min-width:588px)"
+  ]);
+
+
   return (
     <Container paddingTop={10} pb={8} maxW="container.lg">
       <Box align='center'>
         <Text
           fontWeight="bold"
-          fontSize="2xl">
+          fontSize={isNotSmallerScreen ? "2xl" : "xl"}>
           &lt;Projects /&gt;
         </Text>
-        <Text pt={5}>
+        <Text
+          fontSize={isNotSmallerScreen ? "lg" : "md"}
+          pt={5}>
           Some of my portfolios:
         </Text>
       </Box>
@@ -68,7 +78,7 @@ const Project = () => {
         <>
           <Box pt={5} align='center'>
             <Breadcrumb separator=" " >
-              {['All', 'Data Science', 'Web Application'].map((item, index) => (
+              {['All', 'Data Science', 'Web Application', 'Python'].map((item, index) => (
                 <BreadcrumbItem pt={5} key={index}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -118,15 +128,17 @@ const Project = () => {
                       <Link
                         _hover={{ color: 'cyan.300', textDecoration: 'underline' }}
                         href={project.projectLink}
-                        fontSize="xl"
+                        fontSize={isNotSmallerScreen ? "xl" : "lg"}
                         fontWeight="bold"
                         isExternal>
                         &lt;{project.title}/&gt;<Icon w={3.5} h={3.5} ml='1' as={FaLink} />
-                      </Link><br />
+                      </Link>
+                      <br />
                       <Badge fontSize="0.8rem" variant="subtle" mt='2' colorScheme='green'>
                         {project.tags}
                       </Badge>
                       <Text
+                        fontSize={isNotSmallerScreen ? "lg" : "md"}
                         noOfLines={3}
                         _hover={{ noOfLines: 20 }}
                         lineHeight={8}

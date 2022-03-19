@@ -1,5 +1,5 @@
 import React from 'react'
-import profile from '../../assets/images/profile.jpg'
+import profile from '../../assets/images/profile.png'
 import {
   Container,
   Text,
@@ -32,17 +32,18 @@ const Home = () => {
           <Box
             marginTop={isNotSmallerScreen ? 8 : 0}>
             <Box borderRadius='full' align="center">
-              <motion.div
+              <motion.button
                 whileHover={{ scale: 1.05 }}>
                 <Image
+                  bgGradient={isDark ? "linear(to-r, blue.300, cyan.400, teal.300)" : "linear(to-r, blue.700, cyan.600, teal.500)"}
                   zIndex={1}
-                  boxShadow="outline"
+                  boxShadow='dark-lg'
                   borderRadius='full'
                   boxSize='200px'
                   src={profile}
                   alt='Thet Min Htin'
                 />
-              </motion.div>
+              </motion.button>
             </Box>
           </Box>
         </motion.div>
@@ -54,7 +55,7 @@ const Home = () => {
             <Box align="center" >
               <Box paddingBottom={isNotSmallerScreen ? 3 : 5}>
                 <Text
-                  fontSize="2xl"
+                  fontSize={isNotSmallerScreen ? "2xl" : "xl"}
                   fontWeight="bold">
                   &lt;Hello mate, I am Min Htin./&gt;
                 </Text>
@@ -71,7 +72,7 @@ const Home = () => {
                   <Text
                     textAlign="justify"
                     fontWeight="medium"
-                    fontSize="lg">
+                    fontSize={isNotSmallerScreen ? "lg" : "md"}>
                     &lt;Hi, how is going mate? My full name is Thet Min Htin
                     and just call me Min Htin. Welcome
                     from my portfolio web-app. And ya,
