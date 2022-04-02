@@ -124,7 +124,7 @@ const Project = () => {
                         w='full'
                         h='240px'
                         src={urlFor(project.imgUrl)}
-                        // fallbackSrc="https://via.placeholder.com/240"
+                        fallbackSrc="https://via.placeholder.com/240"
                         alt='Not Found'
                       />
                     </Box>
@@ -140,7 +140,10 @@ const Project = () => {
                         &lt;{project.title}/&gt;<Icon w={3.5} h={3.5} ml='1' as={FaLink} />
                       </Link>
                       <br />
-                      <Badge fontSize="0.8rem" variant="subtle" mt='2' colorScheme='green'>
+                      <Badge
+                        fontSize="0.8rem"
+                        variant="subtle" mt='2'
+                        colorScheme='green'>
                         {project.tags[0]}
                       </Badge>
                       <Badge
@@ -172,7 +175,7 @@ const Project = () => {
       )
       }
       <ScrollToTop />
-    </Container >
+    </Container>
   )
 }
 

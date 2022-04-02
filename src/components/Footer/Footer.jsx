@@ -13,7 +13,7 @@ const Footer = () => {
   const [isNotSmallerScreen] = useMediaQuery("(min-width:588px)");
 
   return (
-    <Container pt={9} maxW="container.lg">
+    <Container pt={7} maxW="container.lg">
       <Box
         textAlign="center">
         <Text fontSize="sm">© <strong>Thet Min Htin</strong> {getYear()} All Rights Reserved.</Text>

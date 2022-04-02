@@ -9,6 +9,7 @@ import {
   useColorMode,
   useMediaQuery,
 } from '@chakra-ui/react'
+import { Timeline } from '../../components'
 import { motion } from 'framer-motion'
 
 const Home = () => {
@@ -84,6 +85,7 @@ const Home = () => {
           </Box>
         </motion.div>
       </SimpleGrid>
+      <Timeline />
     </Container>
   )
 }
