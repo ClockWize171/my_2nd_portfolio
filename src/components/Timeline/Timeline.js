@@ -29,6 +29,7 @@ const Timeline = () => {
                         bg={useColorModeValue("#C3E0E5", '#086F83')}
                         className="marker"></Box>
                     <motion.div
+                        viewport={{ once: true }}
                         transition={{ duration: 1 }}
                         whileInView={{ x: [100, 0], opacity: [0, 1] }}
                         className="timeline-content">
@@ -42,6 +43,7 @@ const Timeline = () => {
                         bg={useColorModeValue("#C3E0E5", '#086F83')}
                         className="marker"></Box>
                     <motion.div
+                        viewport={{ once: true }}
                         transition={{ duration: 1 }}
                         whileInView={{ x: [100, 0], opacity: [0, 1] }}
                         className="timeline-content">
@@ -55,6 +57,7 @@ const Timeline = () => {
                         bg={useColorModeValue("#C3E0E5", '#086F83')}
                         className="marker"></Box>
                     <motion.div
+                        viewport={{ once: true }}
                         transition={{ duration: 1 }}
                         whileInView={{ x: [100, 0], opacity: [0, 1] }}
                         className="timeline-content">
@@ -68,6 +71,7 @@ const Timeline = () => {
                         bg={useColorModeValue("#C3E0E5", '#086F83')}
                         className="marker"></Box>
                     <motion.div
+                        viewport={{ once: true }}
                         transition={{ duration: 1 }}
                         whileInView={{ x: [100, 0], opacity: [0, 1] }}
                         className="timeline-content">

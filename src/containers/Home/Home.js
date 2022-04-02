@@ -28,6 +28,7 @@ const Home = () => {
     <Container paddingTop={6} maxW="container.lg">
       <SimpleGrid paddingTop="5vh" columns={[1, null, 2]} spacing='40px'>
         <motion.div
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
           <Box
@@ -49,6 +50,7 @@ const Home = () => {
           </Box>
         </motion.div>
         <motion.div
+          viewport={{ once: true }}
           transition={{ duration: 1 }}
           whileInView={{ y: [100, 0], opacity: [0, 1] }}>
           <Box

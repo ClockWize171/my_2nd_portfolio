@@ -41,6 +41,7 @@ const AboutMe = () => {
     <Container paddingTop={10} maxW="container.lg">
       <SimpleGrid columns={[1, null, 2]} spacing='40px'>
         <motion.div
+          viewport={{ once: true }}
           whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
           <Box
             w="full"
@@ -76,8 +77,7 @@ const AboutMe = () => {
           </Box>
         </motion.div>
 
-        <motion.div
-          whileInView={{ y: [100, 0], opacity: [0, 1] }}>
+        <motion.div>
           <Box align='center'>
             <Box>
               <Image
@@ -126,7 +126,6 @@ const AboutMe = () => {
           <Box >
             <Icon className='right_arrow' mt={3} w={10} h={10} as={BsArrowRight} />
           </Box>
-
         </Box>
 
         <Box paddingTop={5}>

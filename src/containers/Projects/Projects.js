@@ -108,6 +108,7 @@ const Project = () => {
             {filterWork.map((project, index) => (
               <motion.div
                 key={project.title + index}
+                viewport={{ once: true }}
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ duration: 0.75 }}>
                 <Box
