@@ -127,7 +127,7 @@ const Navbar = () => {
 
             <Drawer onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
-                <DrawerContent bgColor={isDark ? "cyan.900" : "cyan.50"}>
+                <DrawerContent bgColor={isDark ? "#023F49" : "#F9FFFB"}>
                     <motion.div
                         whileTap={{ scale: 0.98 }}>
                         <DrawerCloseButton
