@@ -77,7 +77,9 @@ const AboutMe = () => {
           </Box>
         </motion.div>
 
-        <motion.div>
+        <motion.div
+          viewport={{ once: true }}
+          whileInView={{ y: [100, 0], opacity: [0, 1] }}>
           <Box align='center'>
             <Box>
               <Image
