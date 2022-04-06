@@ -40,7 +40,7 @@
  
  .timeline-block-left {
     float: left;
-    direction: rtl
+    direction: rtl;
  }
  
  .marker {
@@ -48,7 +48,6 @@
     height: 16px;
     border-radius: 50%;
     border: 2px solid #CCD1D9;
-    /* background: #4FC1E9; */
     margin-top: 10px;
     z-index: 10;
  }
