@@ -15,6 +15,11 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
   useMediaQuery
 } from '@chakra-ui/react'
 import { FaLink } from "react-icons/fa";
@@ -99,6 +104,14 @@ const Project = () => {
                 </BreadcrumbItem>
               ))}
             </Breadcrumb>
+            {/* <Button
+              colorScheme={show ? 'cyan' : 'green'}
+              variant="outline"
+              size='md'
+              borderRadius='sm'
+              onClick={handleToggle} mt={10}>
+              {show ? 'Shrink' : 'Expand'} All Content
+            </Button> */}
           </Box>
 
           <SimpleGrid
@@ -154,14 +167,23 @@ const Project = () => {
                         colorScheme={project.tags[1] === 'Python' ? 'yellow' : 'cyan'}>
                         {project.tags[1]}
                       </Badge>
-                      <Text
-                        fontSize={isNotSmallerScreen ? "lg" : "md"}
-                        noOfLines={3}
-                        _hover={{ noOfLines: 20 }}
-                        lineHeight={8}
-                        marginTop={2} >
-                        &lt;{project.content}/&gt;
-                      </Text>
+                      <Accordion pt={5} defaultIndex={[1]} allowMultiple>
+                        <AccordionItem>
+                          <h2>
+                            <AccordionButton _expanded={{ bg: isDark ? 'cyan.800' : 'cyan.100' }}>
+                              <Box flex='1' textAlign='left'>
+                                &lt;Read More about <strong>this project</strong>/&gt;
+                              </Box>
+                              <AccordionIcon />
+                            </AccordionButton>
+                          </h2>
+                          <AccordionPanel pb={4}>
+                            <Text lineHeight={8}>
+                              {project.content}
+                            </Text>
+                          </AccordionPanel>
+                        </AccordionItem>
+                      </Accordion>
                     </Box>
                   </Box>
                 </Box>
