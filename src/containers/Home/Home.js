@@ -76,10 +76,8 @@ const Home = () => {
                     textAlign="justify"
                     fontWeight="medium"
                     fontSize={isNotSmallerScreen ? "lg" : "md"}>
-                    &lt;Hi, how is going mate? My full name is Thet Min Htin
-                    and just call me Min Htin. Welcome
-                    from my portfolio web-app. And ya,
-                    feel free and you can just explore everything from here. PEACE! ✌/&gt;
+                    &lt;Hi, how is going mate? My name is Thet Min Htin. Welcome
+                    from my portfolio web-app. And ya, feel free and you can just explore everything from here. PEACE! ✌/&gt;
                   </Text>
                 </Box>
               </motion.div>

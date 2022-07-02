@@ -71,7 +71,7 @@ const Project = () => {
 
 
   return (
-    <Container paddingTop={10} pb={8} maxW="container.lg">
+    <Container paddingTop={10} pb={8} maxW="container.xl">
       <Box align='center'>
         <Text
           fontWeight="bold"
@@ -82,6 +82,12 @@ const Project = () => {
           fontSize={isNotSmallerScreen ? "lg" : "md"}
           pt={5}>
           Some of my portfolios:
+        </Text>
+        <Text
+          fontWeight='semibold'
+          fontSize={['sm', 'md']}
+          pt={5}>
+          All repositories of these projects can be found in my Github account.
         </Text>
       </Box>
       {isLoading ? (
@@ -104,19 +110,11 @@ const Project = () => {
                 </BreadcrumbItem>
               ))}
             </Breadcrumb>
-            {/* <Button
-              colorScheme={show ? 'cyan' : 'green'}
-              variant="outline"
-              size='md'
-              borderRadius='sm'
-              onClick={handleToggle} mt={10}>
-              {show ? 'Shrink' : 'Expand'} All Content
-            </Button> */}
           </Box>
 
           <SimpleGrid
             paddingTop={10}
-            columns={[1, null, 2]}
+            columns={[1, null, 3]}
             spacing='50px'>
             {filterWork.map((project, index) => (
               <motion.div
