@@ -1,11 +1,21 @@
 const IMAGES = [
     {
-        id: 2,
+        id: 1,
         image: 'logos/react.png',
         title: 'React'
     },
     {
-        id: 1,
+        id: 2,
+        image: 'logos/nodejs.png',
+        title: 'NodeJS'
+    },
+    {
+        id: 12,
+        image: 'logos/mongodb.png',
+        title: 'MongoDB'
+    },
+    {
+        id: 13,
         image: 'logos/firebase.png',
         title: 'Firebase'
     },
