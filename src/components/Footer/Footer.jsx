@@ -90,7 +90,7 @@ const Footer = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
               <IconButton
-                onClick={() => window.open("https://discord.gg/d9afQ4KJ")}
+                onClick={() => window.open("https://discord.gg/nVy5cuUN3x")}
                 size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"

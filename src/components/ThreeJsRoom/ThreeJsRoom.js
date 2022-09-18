@@ -72,7 +72,7 @@ const ThreeJsRoom = () => {
           style={{ weight: '400px', height: '300px' }}>
           <Light />
           <RotatingRoom />
-          <OrbitControls enablePan={false} />
+          <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
       </Suspense>
       <Divider
