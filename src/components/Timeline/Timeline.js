@@ -1,6 +1,6 @@
 import React from 'react'
 import './Timeline.css'
-import { Text, Box, useMediaQuery, useColorModeValue } from '@chakra-ui/react'
+import { Text, Box, useMediaQuery, useColorModeValue, Link } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 const Timeline = () => {
@@ -77,6 +77,20 @@ const Timeline = () => {
                         className="timeline-content">
                         <h3>B.Sc (Hons) Computing, Edinburgh Napier University </h3>
                         {isNotSmallerScreen ? <strong>2022 - 2020</strong> : <strong>2020 - 2022</strong>}
+                    </motion.div>
+                </div>
+
+                <div className="timeline-block timeline-block-right">
+                    <Box
+                        bg={useColorModeValue("#C3E0E5", '#086F83')}
+                        className="marker"></Box>
+                    <motion.div
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        whileInView={{ x: [100, 0], opacity: [0, 1] }}
+                        className="timeline-content">
+                        <h3>Frontend Developer at <Link isExternal href='https://www.beyondbrands.io/' color={useColorModeValue("#0900C3", '#0075F6')}><br />BEYOND BRANDS</Link> </h3>
+                        {isNotSmallerScreen ? <strong>2022 - Present</strong> : <strong>2022 - Present</strong>}
                     </motion.div>
                 </div>
 
