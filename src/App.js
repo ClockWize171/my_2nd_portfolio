@@ -1,7 +1,8 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import { Box, useMediaQuery } from '@chakra-ui/react';
 import { Home, AboutMe, Projects, NotFound } from './containers'
-import { Navbar, ThreeJsRoom, Footer } from './components';
+import { Navbar, ThreeJsRoom, Footer, Preloader } from './components';
 import {
   BrowserRouter,
   Routes,
@@ -16,22 +17,38 @@ function App() {
     "(min-width:588px)"
   ]);
 
-  return (
+  const [loading, setLoading] = useState(false)
 
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, Math.floor(Math.random() * 5000) + 1000);
+  }, [])
+
+
+  return (
     <Box
       h={isNotSmallerScreen ? "100%" : '100%'}
     >
-      <BrowserRouter>
-      <ThreeJsRoom />
-      <Navbar />
-        <Routes>
-          <Route path='*' element={<NotFound />} />
-          <Route path='/' exact element={<Home />}></Route>
-          <Route path='/aboutme' element={<AboutMe />}></Route>
-          <Route path='/projects' element={<Projects />}></Route>
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      {loading ?
+        <Preloader />
+        :
+        <>
+          <BrowserRouter>
+            <ThreeJsRoom />
+            <Navbar />
+            <Routes>
+              <Route path='*' element={<NotFound />} />
+              <Route path='/' exact element={<Home />}></Route>
+              <Route path='/aboutme' element={<AboutMe />}></Route>
+              <Route path='/projects' element={<Projects />}></Route>
+            </Routes>
+          </BrowserRouter>
+          <Footer />
+        </>
+      }
+
     </Box>
 
   );
