@@ -17,13 +17,15 @@ function App() {
     "(min-width:588px)"
   ]);
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false)
     }, Math.floor(Math.random() * 5000) + 1000);
+    return () => {
+      clearTimeout(timer)
+    }
   }, [])
 
 

@@ -22,7 +22,7 @@ import {
   AccordionIcon,
   useMediaQuery
 } from '@chakra-ui/react'
-import { FaLink } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { motion } from 'framer-motion'
 
 const Project = () => {
@@ -149,7 +149,10 @@ const Project = () => {
                         fontSize={isNotSmallerScreen ? "xl" : "lg"}
                         fontWeight="bold"
                         isExternal>
-                        &lt;{project.title}/&gt;<Icon w={3.5} h={3.5} ml='1' as={FaLink} />
+                        &lt;{project.title}/&gt;
+                      </Link>
+                      <Link _hover={{ color: 'gray.500' }} href={project.githubLink} isExternal >
+                        <Icon boxSize={5} ml='1' as={FaGithub} />
                       </Link>
                       <br />
                       <Badge

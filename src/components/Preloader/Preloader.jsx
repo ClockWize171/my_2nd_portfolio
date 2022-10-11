@@ -9,7 +9,7 @@ const Preloader = () => {
         <div id="load_animation" >
             <IoEarthOutline
                 name="earth-outline"
-                class="animation"
+                className="animation"
                 style={{ color: useColorModeValue('#00A3C4', '#9DECF9'),
                 border: `3px solid ${useColorModeValue('#00A3C4', '#9DECF9')}` }} />
         </div>
