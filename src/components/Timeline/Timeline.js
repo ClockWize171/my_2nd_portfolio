@@ -90,7 +90,7 @@ const Timeline = () => {
                         whileInView={{ x: [100, 0], opacity: [0, 1] }}
                         className="timeline-content">
                         <h3>Frontend Developer at <Link isExternal href='https://www.beyondbrands.io/' color={useColorModeValue("#0900C3", '#0075F6')}><br />BEYOND BRANDS</Link> </h3>
-                        {isNotSmallerScreen ? <strong>2022 - Present</strong> : <strong>2022 - Present</strong>}
+                        {isNotSmallerScreen ? <strong>2022 Sep - 2022 Oct</strong> : <strong>2022 Sep - 2022 Oct</strong>}
                     </motion.div>
                 </div>
 
