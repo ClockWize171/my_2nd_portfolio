@@ -5,6 +5,11 @@ const IMAGES = [
         title: 'React'
     },
     {
+        id: 15,
+        image: 'logos/next-js.svg',
+        title: 'NextJS'
+    },
+    {
         id: 14,
         image: 'logos/figma.png',
         title: 'Figma'
