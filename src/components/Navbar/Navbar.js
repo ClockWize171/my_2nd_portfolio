@@ -32,7 +32,7 @@ const Navbar = () => {
     const isDark = colorMode === "dark"
 
     // Screen Size
-    const [isNotSmallerScreen] = useMediaQuery("(min-width:713px)");
+    const [isNotSmallerScreen] = useMediaQuery("(min-width:944px)");
 
     //  Open Close Drawer
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -59,6 +59,8 @@ const Navbar = () => {
             </Box>
             <Spacer />
 
+
+            {/* Desktop Navbar */}
             <Box
                 display={isNotSmallerScreen ? "flex" : "none"}
                 paddingLeft={3}>
@@ -91,6 +93,20 @@ const Navbar = () => {
                             </NavLink>
                         </motion.div>
                     </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.9 }}>
+                            <NavLink to='/contact_me'>
+                                <Button
+                                    borderRadius="sm"
+                                    colorScheme='cyan'
+                                    variant='outline'>
+                                    &lt;contact_me /&gt;
+                                </Button>
+                            </NavLink>
+                        </motion.div>
+                    </BreadcrumbItem>
                 </Breadcrumb>
             </Box>
 
@@ -109,6 +125,8 @@ const Navbar = () => {
                         icon={isDark ? <HiLightBulb /> : <RiMoonClearFill />} />
                 </motion.div>
             </Box>
+
+            {/* Mobile Siderbar */}
             <Box
                 display={isNotSmallerScreen ? "none" : "flex"}
                 paddingLeft={3}>
@@ -166,6 +184,22 @@ const Navbar = () => {
                                         colorScheme='cyan'
                                         variant='outline'>
                                         &lt;projects /&gt;
+                                    </Button>
+                                </motion.div>
+                            </NavLink><br />
+                            <NavLink
+                                onClick={onClose}
+                                style={{ textDecoration: "none" }}
+                                to='/contact_me'>
+                                <motion.div
+                                    whileTap={{ scale: 0.9 }}>
+                                    <Button
+                                        w="200px"
+                                        fontSize="md"
+                                        borderRadius="sm"
+                                        colorScheme='cyan'
+                                        variant='outline'>
+                                        &lt;contact_me /&gt;
                                     </Button>
                                 </motion.div>
                             </NavLink>

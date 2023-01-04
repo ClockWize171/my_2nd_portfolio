@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Box, useMediaQuery } from '@chakra-ui/react';
-import { Home, AboutMe, Projects, NotFound } from './containers'
+import { Home, AboutMe, Projects, NotFound, ContactMe } from './containers'
 import { Navbar, ThreeJsRoom, Footer, Preloader } from './components';
 import {
   BrowserRouter,
@@ -45,6 +45,7 @@ function App() {
               <Route path='/' exact element={<Home />}></Route>
               <Route path='/aboutme' element={<AboutMe />}></Route>
               <Route path='/projects' element={<Projects />}></Route>
+              <Route path='/contact_me' element={<ContactMe />}></Route>
             </Routes>
           </BrowserRouter>
           <Footer />
