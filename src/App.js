@@ -46,6 +46,7 @@ function App() {
               <Route path='/aboutme' element={<AboutMe />}></Route>
               <Route path='/projects' element={<Projects />}></Route>
               <Route path='/contact_me' element={<ContactMe />}></Route>
+              {/* <Route path='/snow' element={<SnowEffect />}></Route> */}
             </Routes>
           </BrowserRouter>
           <Footer />
