@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { Box, useMediaQuery } from '@chakra-ui/react';
 import { Home, AboutMe, Projects, NotFound, ContactMe } from './containers'
-import { Navbar, ThreeJsRoom, Footer, Preloader } from './components';
+import { Navbar, ThreeJsRoom, Footer, Preloader, SnowEffect } from './components';
 import {
   BrowserRouter,
   Routes,
@@ -33,6 +33,7 @@ function App() {
     <Box
       h={isNotSmallerScreen ? "100%" : '100%'}
     >
+      <SnowEffect />
       {loading ?
         <Preloader />
         :

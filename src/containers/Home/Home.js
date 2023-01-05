@@ -1,5 +1,6 @@
 import React from 'react'
 import profile from '../../assets/images/profile.png'
+import profileAlt from '../../assets/images/profile_christmas.png'
 import {
   Container,
   Text,
@@ -11,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { Timeline } from '../../components'
 import { motion } from 'framer-motion'
+import { winterTime } from '../../utils/winterTime'
 
 const Home = () => {
 
@@ -42,7 +44,7 @@ const Home = () => {
                   boxShadow='dark-lg'
                   borderRadius='full'
                   boxSize='200px'
-                  src={profile}
+                  src={winterTime(profileAlt, profile)}
                   alt='Thet Min Htin'
                 />
               </motion.button>

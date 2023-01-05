@@ -24,6 +24,9 @@ import { motion } from 'framer-motion';
 import { RiMoonClearFill } from "react-icons/ri";
 import { HiLightBulb } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ReactComponent as LogoAlt } from '../../assets/images/LogoAlt.svg'
+import { winterTime } from '../../utils/winterTime'
+
 
 const Navbar = () => {
 
@@ -48,12 +51,21 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}>
                     <NavLink style={{ textDecoration: 'none' }} to='/'>
-                        <Text
-                            mt={1}
-                            fontSize={isNotSmallerScreen ? "xl" : "xl"}
-                            fontWeight="bold">
-                            &lt;thet_min_htin/&gt;
-                        </Text>
+                        {winterTime(<Box
+                            pointerEvents='none'
+                            m='auto'>
+                            <LogoAlt
+                            
+                                style={{ height: '2rem', width: '11rem' }} />
+                        </Box>,
+                            <Text
+                                mt={1}
+                                fontSize={isNotSmallerScreen ? "xl" : "xl"}
+                                fontWeight="bold">
+                                thet_min_htin
+                            </Text>
+                        )}
+
                     </NavLink>
                 </motion.div>
             </Box>
