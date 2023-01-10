@@ -25,7 +25,7 @@ const Footer = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
               <IconButton
-                onClick={() => window.open("mailto:takashiaoyama171@gmail.com")}
+                onClick={() => window.open("mailto:thetminhtin229@gmail.com")}
                 size={isNotSmallerScreen ? 'md' : 'sm'}
                 mr='2'
                 borderRadius="full"

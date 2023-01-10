@@ -44,6 +44,12 @@ const ContactMe = () => {
         e.preventDefault();
         setSubmitting(true);
         await postSubmission();
+        if (recaptchaToken === undefined) {
+            setMessage({
+                status: 'error',
+                text: 'Please verify recaptcha!'
+            })
+        }
         setSubmitting(false)
 
     }
