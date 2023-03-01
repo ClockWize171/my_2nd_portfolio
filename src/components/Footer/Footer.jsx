@@ -14,11 +14,7 @@ const Footer = () => {
 
   return (
     <Container pt={7} maxW="container.lg">
-      <Box
-        textAlign="center">
-        <Text fontSize="sm">© <strong>Thet Min Htin</strong> {getYear()} All Rights Reserved.</Text>
-      </Box>
-      <Box pt={4} pb={4} align='center'>
+      <Box align='center'>
         <Box>
           <Flex justifyContent='center' flexDir='row'>
             <motion.div
@@ -99,6 +95,11 @@ const Footer = () => {
                 icon={<FaDiscord />} />
             </motion.div>
           </Flex>
+          <Box
+            pt={4} pb={4}
+            textAlign="center">
+            <Text fontSize="sm">© <strong>Thet Min Htin</strong> {getYear()} All Rights Reserved.</Text>
+          </Box>
         </Box>
       </Box>
     </Container>

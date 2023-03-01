@@ -17,7 +17,7 @@ const Timeline = () => {
                 <Text
                     fontSize={isNotSmallerScreen ? "2xl" : "xl"}
                     fontWeight="bold">
-                    &lt;Path /&gt;
+                    Path.
                 </Text>
             </Box>
 

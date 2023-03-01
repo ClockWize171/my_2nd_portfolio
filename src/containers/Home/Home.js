@@ -10,7 +10,7 @@ import {
   useColorMode,
   useMediaQuery,
 } from '@chakra-ui/react'
-import { Timeline } from '../../components'
+import { Timeline, RecentProject } from '../../components'
 import { motion } from 'framer-motion'
 import { winterTime } from '../../utils/winterTime'
 
@@ -62,7 +62,7 @@ const Home = () => {
                 <Text
                   fontSize={isNotSmallerScreen ? "2xl" : "xl"}
                   fontWeight="bold">
-                  &lt;Hello mate, I am Min Htin./&gt;
+                  Welcome From My Portfolio.
                 </Text>
               </Box>
               <motion.div
@@ -78,8 +78,7 @@ const Home = () => {
                     textAlign="justify"
                     fontWeight="medium"
                     fontSize={isNotSmallerScreen ? "lg" : "md"}>
-                    &lt;Hi, how is going mate? My name is Thet Min Htin. Welcome
-                    from my portfolio web-app. And ya, feel free and you can just explore everything from here. PEACE! ✌/&gt;
+                    My name is Thet Min Htin. Welcome from my portfolio web-app. And ya, feel free and you can just explore everything from here. PEACE! ✌
                   </Text>
                 </Box>
               </motion.div>
@@ -87,6 +86,7 @@ const Home = () => {
           </Box>
         </motion.div>
       </SimpleGrid>
+      <RecentProject />
       <Timeline />
     </Container>
   )

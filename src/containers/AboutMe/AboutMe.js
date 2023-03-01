@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React from 'react'
 import {
   Container,
   Text,
@@ -15,20 +15,9 @@ import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
 import { motion } from 'framer-motion'
 import logos from '../../assets/images/Logo'
 import hello from '../../assets/images/undraw_hello_re_3evm.svg'
+import { FramerCarousel } from '../../components';
 
 const AboutMe = () => {
-
-  // Carousel Settings
-  const [width, setWidth] = useState(0)
-  const carousel = useRef(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const scrollWidth = carousel.current.scrollWidth
-      const offsetWidth = carousel.current.offsetWidth
-      setWidth(scrollWidth - offsetWidth)
-    }, 1000)
-  }, [carousel])
 
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
@@ -51,7 +40,7 @@ const AboutMe = () => {
               fontSize={isNotSmallerScreen ? "2xl" : "xl"}
               fontWeight="bold">
               <Text>
-                &lt;about_me?/&gt;
+                about_me?
               </Text>
             </Box>
             <motion.div
@@ -65,12 +54,12 @@ const AboutMe = () => {
                 rounded='md'
                 boxShadow="inner">
                 <Text
-                  textAlign="center"
+                  textAlign="justify"
                   fontWeight="medium"
                   fontSize={isNotSmallerScreen ? "lg" : "md"}>
-                  &lt;Welcome mate 😃, I am Burmese and from Myanmar(Yangon-based).
+                  Welcome mate 😃, I am Burmese and from Myanmar(Yangon-based).
                   I emphasized professionalism in IT fields. I did nearly most parts of the IT fields such as web development, scripting, networking, system administration,
-                  machine learning and etc. /&gt;
+                  machine learning and etc.
                 </Text>
               </Box>
             </motion.div>
@@ -102,7 +91,7 @@ const AboutMe = () => {
                   borderRadius="sm"
                   variant='outline'
                   colorScheme="cyan">
-                  &lt;Resume <Icon ml={1} as={BsLink45Deg} /> /&gt;
+                  Resume. <Icon ml={1} as={BsLink45Deg} />
                 </Button>
               </motion.div>
             </Box>
@@ -116,7 +105,7 @@ const AboutMe = () => {
           <Text
             fontSize={isNotSmallerScreen ? "2xl" : "xl"}
             fontWeight='bold'>
-            &lt;What I Can Do? /&gt;
+            What I Can Do.
           </Text>
         </Box>
         <Box paddingTop={5} align='center'>
@@ -131,49 +120,41 @@ const AboutMe = () => {
         </Box>
 
         <Box paddingTop={5}>
-          <motion.div
-            ref={carousel}
-            className='carousel'
-            whileTap={{ cursor: "grabbing" }}>
-            <motion.div
-              drag="x"
-              dragConstraints={{ right: 0, left: -width }}
-              className="inner-carousel">
-              {logos.map((logo) => {
-                return (
-                  <motion.div
-                    style={{
-                      paddingBottom: "2vh"
-                    }}
-                    whileInView={{ y: [100, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.5 }}
-                    key={logo.id}>
-                    <Box
-                      ml={isNotSmallerScreen ? 3 : 0}
-                      padding={3}>
-                      <Image
-                        bg={isDark ? 'cyan.800' : '#c3e0e5'}
-                        fallbackSrc='https://via.placeholder.com/240'
-                        padding={7}
-                        borderRadius="3xl"
-                        boxShadow="lg"
-                        w="full"
-                        h="12rem"
-                        style={{
-                          minWidth: "12rem",
-                          minHeight: "12rem",
-                          pointerEvents: "none"
-                        }}
-                        src={logo.image}></Image>
-                    </Box>
-                    <Text fontWeight='semibold' textAlign='center'>
-                      &lt;{logo.title}/&gt;
-                    </Text>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
-          </motion.div>
+          <FramerCarousel>
+            {logos.map((logo) => {
+              return (
+                <motion.div
+                  style={{
+                    paddingBottom: "2vh"
+                  }}
+                  whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                  transition={{ duration: 0.5 }}
+                  key={logo.id}>
+                  <Box
+                    ml={isNotSmallerScreen ? 3 : 0}
+                    padding={3}>
+                    <Image
+                      bg={isDark ? 'cyan.800' : '#c3e0e5'}
+                      fallbackSrc='https://via.placeholder.com/240'
+                      padding={7}
+                      borderRadius="3xl"
+                      boxShadow="lg"
+                      w="full"
+                      h="12rem"
+                      style={{
+                        minWidth: "12rem",
+                        minHeight: "12rem",
+                        pointerEvents: "none"
+                      }}
+                      src={logo.image}></Image>
+                  </Box>
+                  <Text fontWeight='semibold' textAlign='center'>
+                    &lt;{logo.title}/&gt;
+                  </Text>
+                </motion.div>
+              )
+            })}
+          </FramerCarousel>
         </Box>
       </Box>
     </Container>

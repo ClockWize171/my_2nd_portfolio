@@ -94,7 +94,7 @@ const ContactMe = () => {
                 <Text
                     fontWeight="bold"
                     fontSize={isNotSmallerScreen ? "2xl" : "xl"}>
-                    &lt;Contact Me /&gt;
+                    Contact Me.
                 </Text>
             </Box>
             <motion.div

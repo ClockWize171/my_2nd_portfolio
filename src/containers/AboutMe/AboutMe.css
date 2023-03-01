@@ -1,12 +1,3 @@
-.inner-carousel {
-  display: flex;
-}
-
-.carousel {
-  cursor: grab;
-  overflow: hidden;
-}
-
 .right_arrow {
   position: relative;
   -webkit-animation: right_mover 1s infinite alternate;

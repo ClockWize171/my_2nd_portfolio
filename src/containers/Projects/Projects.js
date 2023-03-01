@@ -9,7 +9,7 @@ import {
   Image,
   useColorMode,
   Badge,
-  Icon,
+  IconButton,
   Link,
   Spinner,
   Breadcrumb,
@@ -20,7 +20,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  useMediaQuery
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { FaGithub } from "react-icons/fa";
 import { motion } from 'framer-motion'
@@ -37,7 +37,8 @@ const Project = () => {
     const query = '*[_type == "projects"]'
     client.fetch(query)
       .then((data) => {
-        setProjects(data)
+        const dateSorted = data.sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt));
+        setProjects(dateSorted)
         setFilterWork(data)
         setIsLoading(true)
       })
@@ -55,7 +56,7 @@ const Project = () => {
       } else {
         setFilterWork(projects.filter((project) => project.tags.includes(item)))
       }
-    }, 500)
+    }, 300)
 
   }
 
@@ -76,7 +77,7 @@ const Project = () => {
         <Text
           fontWeight="bold"
           fontSize={isNotSmallerScreen ? "2xl" : "xl"}>
-          &lt;Projects /&gt;
+          Project.
         </Text>
         <Text
           fontSize={isNotSmallerScreen ? "lg" : "md"}
@@ -149,31 +150,39 @@ const Project = () => {
                         fontSize={isNotSmallerScreen ? "xl" : "lg"}
                         fontWeight="bold"
                         isExternal>
-                        &lt;{project.title}/&gt;
+                        {project.title}
                       </Link>
-                      <Link _hover={{ color: 'gray.500' }} href={project.githubLink} isExternal >
-                        <Icon boxSize={5} ml='1' as={FaGithub} />
-                      </Link>
-                      <br />
-                      <Badge
-                        fontSize="0.8rem"
-                        variant="subtle" mt='2'
-                        colorScheme='green'>
-                        {project.tags[0]}
-                      </Badge>
-                      <Badge
-                        fontSize="0.8rem"
-                        variant="subtle"
-                        mt='2' ml={2}
-                        colorScheme={project.tags[1] === 'Python' ? 'yellow' : 'cyan'}>
-                        {project.tags[1]}
-                      </Badge>
+                      <Box>
+                        <Badge
+                          fontSize="0.8rem"
+                          variant="subtle" mt='2'
+                          colorScheme='green'>
+                          {project.tags[0]}
+                        </Badge>
+                        <Badge
+                          fontSize="0.8rem"
+                          variant="subtle"
+                          mt='2' ml={2}
+                          colorScheme={project.tags[1] === 'Python' ? 'yellow' : 'cyan'}>
+                          {project.tags[1]}
+                        </Badge>
+                      </Box>
+                      <Box mt={2}>
+                        <Link href={project.githubLink} isExternal>
+                          <IconButton
+                            border='1px'
+                            aria-label='SunIcon'
+                            variant="outline"
+                            borderRadius='full'
+                            icon={<FaGithub />} />
+                        </Link>
+                      </Box>
                       <Accordion pt={5} defaultIndex={[1]} allowMultiple>
                         <AccordionItem>
                           <h2>
                             <AccordionButton _expanded={{ bg: isDark ? 'cyan.800' : 'cyan.100' }}>
                               <Box flex='1' textAlign='left'>
-                                &lt;Read More about <strong>this project</strong>/&gt;
+                                Read More about <strong>this project</strong>.
                               </Box>
                               <AccordionIcon />
                             </AccordionButton>
