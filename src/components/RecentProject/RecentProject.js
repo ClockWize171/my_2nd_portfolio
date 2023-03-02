@@ -70,7 +70,7 @@ const RecentProject = () => {
                       pointerEvents='none'
                       borderRadius='md'
                       w='full'
-                      h='20rem'
+                      h={['13rem','20rem']}
                       objectFit='cover'
                       src={urlFor(data.imgUrl)}
                       fallbackSrc="https://via.placeholder.com/240"
