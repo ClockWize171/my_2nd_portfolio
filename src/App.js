@@ -42,12 +42,11 @@ function App() {
             <ThreeJsRoom />
             <Navbar />
             <Routes>
-              <Route path='*' element={<NotFound />} />
-              <Route path='/' exact element={<Home />}></Route>
-              <Route path='/aboutme' element={<AboutMe />}></Route>
-              <Route path='/projects' element={<Projects />}></Route>
-              <Route path='/contact_me' element={<ContactMe />}></Route>
-              {/* <Route path='/snow' element={<SnowEffect />}></Route> */}
+              <Route path='*' element={<NotFound title='404 Not Found | thet-min-htin' />} />
+              <Route path='/' exact element={<Home title='Home | thet-min-htin' />} />
+              <Route path='/aboutme' element={<AboutMe title='About Me | thet-min-htin' />} />
+              <Route path='/projects' element={<Projects title='Projects | thet-min-htin' />} />
+              <Route path='/contact_me' element={<ContactMe title='Contact Me | thet-min-htin' />} />
             </Routes>
           </BrowserRouter>
           <Footer />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Container,
   Text,
@@ -17,11 +17,14 @@ import logos from '../../assets/images/Logo'
 import hello from '../../assets/images/undraw_hello_re_3evm.svg'
 import { FramerCarousel } from '../../components';
 
-const AboutMe = () => {
+const AboutMe = ({ title }) => {
+  
+  useEffect(() => { document.title = title }, [title])
 
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
   const isDark = colorMode === "dark"
+
 
   // Screen Size
   const [isNotSmallerScreen] = useMediaQuery("(min-width:588px)");

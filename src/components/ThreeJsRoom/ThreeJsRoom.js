@@ -1,5 +1,6 @@
 import React, { Suspense, useRef, memo } from 'react'
 import { Container, Spinner, Box, Divider, useColorModeValue } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { Canvas, useLoader, useFrame } from "@react-three/fiber"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "@react-three/drei"
@@ -50,7 +51,7 @@ const ThreeJsRoom = () => {
     )
   }
 
-  function RotatingRoom() {
+  function RotateModel() {
     const ref = useRef();
     useFrame(({ clock }) => {
       const a = clock.getElapsedTime();
@@ -67,13 +68,18 @@ const ThreeJsRoom = () => {
   return (
     <Container pt={5} maxW='container.sm'>
       <Suspense fallback={<LoadingSpinner />}>
-        <Canvas
-          camera={{ position: [3, 0, 5] }}
-          style={{ weight: '400px', height: '300px' }}>
-          <Light />
-          <RotatingRoom />
-          <OrbitControls enableZoom={false} enablePan={false} />
-        </Canvas>
+        <motion.div
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          whileInView={{ x: [-100, 0], opacity: [0, 1] }}>
+          <Canvas
+            camera={{ position: [3, 0, 5] }}
+            style={{ weight: '400px', height: '300px' }}>
+            <Light />
+            <RotateModel />
+            <OrbitControls enableZoom={false} enablePan={false} />
+          </Canvas>
+        </motion.div>
       </Suspense>
       <Divider
         borderColor={useColorModeValue("gray.400", 'gray.100')}

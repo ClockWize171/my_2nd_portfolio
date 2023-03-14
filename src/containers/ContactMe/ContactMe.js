@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import {
     Box,
@@ -20,7 +20,11 @@ import { IoSend } from "react-icons/io5";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { ReactComponent as PaperPlane } from '../../assets/images/paper_plane_black.svg'
 
-const ContactMe = () => {
+const ContactMe = ({ title }) => {
+
+    useEffect(() => { document.title = title }, [title])
+
+
     const intialFormState = {
         email: '',
         name: '',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import profile from '../../assets/images/profile.png'
 import profileAlt from '../../assets/images/profile_christmas.png'
 import {
@@ -14,7 +14,9 @@ import { Timeline, RecentProject } from '../../components'
 import { motion } from 'framer-motion'
 import { winterTime } from '../../utils/winterTime'
 
-const Home = () => {
+const Home = ({ title }) => {
+
+  useEffect(() => { document.title = title }, [title])
 
   // Toggle Color Mode 
   const { colorMode } = useColorMode()
@@ -31,7 +33,7 @@ const Home = () => {
       <SimpleGrid paddingTop="5vh" columns={[1, null, 2]} spacing='40px'>
         <motion.div
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.25 }}
           whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
           <Box
             marginTop={isNotSmallerScreen ? 8 : 0}>
@@ -53,7 +55,7 @@ const Home = () => {
         </motion.div>
         <motion.div
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.25 }}
           whileInView={{ y: [100, 0], opacity: [0, 1] }}>
           <Box
             paddingBottom={isNotSmallerScreen ? "2vh" : 0}>

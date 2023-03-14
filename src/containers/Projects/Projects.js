@@ -25,7 +25,9 @@ import {
 import { FaGithub } from "react-icons/fa";
 import { motion } from 'framer-motion'
 
-const Project = () => {
+const Project = ({ title }) => {
+
+  useEffect(() => { document.title = title }, [title])
 
   const [projects, setProjects] = useState([])
   const [isLoading, setIsLoading] = useState(false)

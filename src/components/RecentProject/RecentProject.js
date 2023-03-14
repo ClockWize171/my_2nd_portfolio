@@ -53,67 +53,72 @@ const RecentProject = () => {
       {loading ?
         <RecentSkeleton />
         :
-        <FramerCarousel>
-          {recentProject.map((data, index) => (
-            <motion.div key={index}>
-              <Box
-                w={['20rem', '20rem', '50rem']}
-                mt={5}
-                boxShadow='lg'
-                ml={5}
-                bgColor={isLight ? '#c3e0e5 ' : '#055460'}
-                borderRadius='lg'
-              >
-                <Flex flexDir={['column', 'column', 'row']}>
-                  <Box w='full' p={[0, 0, 5]}>
-                    <Image
-                      pointerEvents='none'
-                      borderRadius='md'
-                      w='full'
-                      h={['13rem','20rem']}
-                      objectFit='cover'
-                      src={urlFor(data.imgUrl)}
-                      fallbackSrc="https://via.placeholder.com/240"
-                      alt='project-image'
-                    />
-                  </Box>
-                  <Flex w='full' alignSelf='flex-start' gap={3} flexDir='column' p={5}>
-                    <Link
-                      _hover={{ color: 'cyan.300', textDecoration: 'underline', wordWrap: 'break-word' }}
-                      href={data.projectLink}
-                      isExternal>
-                      <Text fontSize='xl' fontWeight='bold'>
-                        {data.title}
+        <motion.div
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ y: [100, 0], opacity: [0, 1] }}>
+          <FramerCarousel>
+            {recentProject.map((data, index) => (
+              <motion.div key={index}>
+                <Box
+                  w={['20rem', '20rem', '50rem']}
+                  mt={5}
+                  boxShadow='lg'
+                  ml={5}
+                  bgColor={isLight ? '#c3e0e5 ' : '#055460'}
+                  borderRadius='lg'
+                >
+                  <Flex flexDir={['column', 'column', 'row']}>
+                    <Box w='full' p={[0, 0, 5]}>
+                      <Image
+                        pointerEvents='none'
+                        borderRadius='md'
+                        w='full'
+                        h={['13rem', '20rem']}
+                        objectFit='cover'
+                        src={urlFor(data.imgUrl)}
+                        fallbackSrc="https://via.placeholder.com/240"
+                        alt='project-image'
+                      />
+                    </Box>
+                    <Flex w='full' alignSelf='flex-start' gap={3} flexDir='column' p={5}>
+                      <Link
+                        _hover={{ color: 'cyan.300', textDecoration: 'underline', wordWrap: 'break-word' }}
+                        href={data.projectLink}
+                        isExternal>
+                        <Text fontSize='xl' fontWeight='bold'>
+                          {data.title}
+                        </Text>
+                      </Link>
+                      <HStack gap={2}>
+                        {data.tags.map((tag, index) => (
+                          <Badge
+                            key={index}
+                            fontSize="0.8rem"
+                            variant="subtle"
+                            colorScheme={tag === 'React' ? 'blue' : 'green'}>
+                            {tag}
+                          </Badge>
+                        ))}
+                      </HStack>
+                      <Text h={['100px', '150px']} overflowY='auto'>
+                        {data.content}
                       </Text>
-                    </Link>
-                    <HStack gap={2}>
-                      {data.tags.map((tag, index) => (
-                        <Badge
-                          key={index}
-                          fontSize="0.8rem"
-                          variant="subtle"
-                          colorScheme={tag === 'React' ? 'blue' : 'green'}>
-                          {tag}
-                        </Badge>
-                      ))}
-                    </HStack>
-                    <Text h={['100px', '150px']} overflowY='auto'>
-                      {data.content}
-                    </Text>
-                    <Button
-                      onClick={() => window.open(data.githubLink)}
-                      borderRadius='none'
-                      w='10rem'
-                      rightIcon={<FaGithub />}>
-                      Github
-                    </Button>
+                      <Button
+                        onClick={() => window.open(data.githubLink)}
+                        borderRadius='none'
+                        w='10rem'
+                        rightIcon={<FaGithub />}>
+                        Github
+                      </Button>
+                    </Flex>
                   </Flex>
-                </Flex>
-              </Box>
-            </motion.div>
-          ))
-          }
-        </FramerCarousel>
+                </Box>
+              </motion.div>
+            ))
+            }
+          </FramerCarousel>
+        </motion.div>
       }
 
     </Box>
