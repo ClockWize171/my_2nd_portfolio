@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# My Personal Portfolio Website.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This will be my second personal portfolio website which is built with ReactJS. Sanity.io headless CMS is used for backend to store my project information.
 
-## Available Scripts
+## Mockup Images
 
-In the project directory, you can run:
+### Light Mode
 
-### `npm start`
+![home_desktop](./images//light-mode.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dark Mode
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![explore_desktop](./images//dark-mode.png)
 
-### `npm test`
+## Major Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ReactJS
 
-### `npm run build`
+- ReactJS library is used to build the web app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Sanity
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- To store my project data, headless CMS [sanity](https://www.sanity.io/) is used.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ThreeJS
 
-### `npm run eject`
+- To used threejs in ReactJS, some libraries is need like [Pmndrs.doc](https://docs.pmnd.rs/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### React Router DOM v6
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React router dom is used to navigate efficiently through web app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Chakra UI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- For styling and components, [ChakraUI](https://chakra-ui.com/) is used.
 
-## Learn More
+### Snowing Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- There will be snow effect on the christmas day.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Run Locally
 
-### Code Splitting
+Clone the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/ClockWize171/my_2nd_portfolio
+```
 
-### Analyzing the Bundle Size
+Go to the project directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+  cd <your-repo-name>
+```
 
-### Making a Progressive Web App
+Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+  npm install
+```
 
-### Advanced Configuration
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm start
+```
