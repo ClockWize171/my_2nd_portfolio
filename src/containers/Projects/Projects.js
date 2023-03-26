@@ -22,7 +22,7 @@ import {
   AccordionIcon,
   useMediaQuery,
 } from '@chakra-ui/react'
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLink } from "react-icons/fa";
 import { motion } from 'framer-motion'
 
 const Project = ({ title }) => {
@@ -146,14 +146,11 @@ const Project = ({ title }) => {
                     <Box
                       textAlign="left"
                       paddingTop={3}>
-                      <Link
-                        _hover={{ color: 'cyan.300', textDecoration: 'underline' }}
-                        href={project.projectLink}
+                      <Text
                         fontSize={isNotSmallerScreen ? "xl" : "lg"}
-                        fontWeight="bold"
-                        isExternal>
+                        fontWeight="bold">
                         {project.title}
-                      </Link>
+                      </Text>
                       <Box>
                         <Badge
                           fontSize="0.8rem"
@@ -173,11 +170,22 @@ const Project = ({ title }) => {
                         <Link href={project.githubLink} isExternal>
                           <IconButton
                             border='1px'
-                            aria-label='SunIcon'
+                            aria-label='Link Icon'
                             variant="outline"
                             borderRadius='full'
                             icon={<FaGithub />} />
                         </Link>
+                        {project.projectLink !== "false" && (
+                          <Link href={project.projectLink} isExternal>
+                            <IconButton
+                              ml={3}
+                              border='1px'
+                              aria-label='Link Icon'
+                              variant="outline"
+                              borderRadius='full'
+                              icon={<FaLink />} />
+                          </Link>
+                        )}
                       </Box>
                       <Accordion pt={5} defaultIndex={[1]} allowMultiple>
                         <AccordionItem>

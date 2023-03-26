@@ -9,6 +9,12 @@ const ScrollToTop = () => {
     const [scrollToTop, setScrollToTop] = useState(false)
 
     useEffect(() => {
+        const ac = new AbortController();
+        checkScrollUp();
+        return () => ac.abort();
+    }, [])
+
+    function checkScrollUp() {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
                 setScrollToTop(true)
@@ -16,14 +22,16 @@ const ScrollToTop = () => {
                 setScrollToTop(false)
             }
         })
-    }, [])
+    }
 
     const scrollUp = () => {
         window.scrollTo({
-            top: 0,
+            top: 0, 
             behavior: 'smooth'
-        })
+          });
     }
+
+
     return (
         <motion.div
             style={{

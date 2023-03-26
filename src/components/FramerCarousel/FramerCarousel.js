@@ -8,11 +8,13 @@ const FramerCarousel = ({ children }) => {
   const carousel = useRef(null);
 
   useEffect(() => {
+    const ac = new AbortController();
     setTimeout(() => {
-      const scrollWidth = carousel.current.scrollWidth
-      const offsetWidth = carousel.current.offsetWidth
+      const scrollWidth = carousel.current?.scrollWidth
+      const offsetWidth = carousel.current?.offsetWidth
       setWidth(scrollWidth - offsetWidth)
     }, 1000)
+    return () => ac.abort();
   }, [carousel])
 
 

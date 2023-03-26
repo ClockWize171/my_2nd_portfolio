@@ -14,11 +14,11 @@ import './AboutMe.css'
 import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
 import { motion } from 'framer-motion'
 import logos from '../../assets/images/Logo'
-import hello from '../../assets/images/undraw_hello_re_3evm.svg'
+import hello3d from '../../assets/images/3d-illu.svg'
 import { FramerCarousel } from '../../components';
 
 const AboutMe = ({ title }) => {
-  
+
   useEffect(() => { document.title = title }, [title])
 
   // Toggle Color Mode 
@@ -34,6 +34,7 @@ const AboutMe = ({ title }) => {
       <SimpleGrid columns={[1, null, 2]} spacing='40px'>
         <motion.div
           viewport={{ once: true }}
+          transition={{ duration: 1 }}
           whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
           <Box
             w="full"
@@ -69,37 +70,39 @@ const AboutMe = ({ title }) => {
           </Box>
         </motion.div>
 
-        <motion.div
-          viewport={{ once: true }}
-          whileInView={{ y: [100, 0], opacity: [0, 1] }}>
-          <Box align='center'>
+        <Box align='center'>
+          <motion.div
+            viewport={{ once: true }}
+            transition={{ duration: 1.25 }}
+            whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
             <Box>
               <Image
+                m='auto'
                 boxSize='300px'
-                src={hello}
+                src={hello3d}
                 alt='Hello Image'
               />
             </Box>
-            <Box>
-              <motion.div
-                style={{
-                  width: '165px'
-                }}
-                whileTap={{ scale: 0.9 }}
-                whileHover={{ scale: 1.05 }}>
-                <Button
-                  w="10rem"
-                  h='3rem'
-                  onClick={() => window.open("https://resume.io/r/O8p8INUxy")}
-                  borderRadius="sm"
-                  variant='outline'
-                  colorScheme="cyan">
-                  Resume. <Icon ml={1} as={BsLink45Deg} />
-                </Button>
-              </motion.div>
+          </motion.div>
+          <motion.div
+            transition={{ duration: 1.5 }}
+            viewport={{ once: true }}
+            whileInView={{ y: [100, 0], opacity: [0, 1] }}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}>
+            <Box mt={5}>
+              <Button
+                w="10rem"
+                h='3rem'
+                onClick={() => window.open("https://resume.io/r/O8p8INUxy")}
+                borderRadius="sm"
+                variant='outline'
+                colorScheme="cyan">
+                Resume. <Icon ml={1} as={BsLink45Deg} />
+              </Button>
             </Box>
-          </Box>
-        </motion.div>
+          </motion.div>
+        </Box>
       </SimpleGrid>
 
       {/* Skill Parts */}
