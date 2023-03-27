@@ -7,12 +7,11 @@ import {
   Button,
   Flex,
   useColorMode,
-  Link
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react';
 import { client, urlFor } from '../../client';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLink } from 'react-icons/fa';
 import FramerCarousel from '../FramerCarousel/FramerCarousel';
 import RecentSkeleton from './RecentSkeleton';
 
@@ -82,14 +81,9 @@ const RecentProject = () => {
                       />
                     </Box>
                     <Flex w='full' alignSelf='flex-start' gap={3} flexDir='column' p={5}>
-                      <Link
-                        _hover={{ color: 'cyan.300', textDecoration: 'underline', wordWrap: 'break-word' }}
-                        href={data.projectLink}
-                        isExternal>
-                        <Text fontSize='xl' fontWeight='bold'>
-                          {data.title}
-                        </Text>
-                      </Link>
+                      <Text fontSize='xl' fontWeight='bold'>
+                        {data.title}
+                      </Text>
                       <HStack gap={2}>
                         {data.tags.map((tag, index) => (
                           <Badge
@@ -104,13 +98,22 @@ const RecentProject = () => {
                       <Text h={['100px', '150px']} overflowY='auto'>
                         {data.content}
                       </Text>
-                      <Button
-                        onClick={() => window.open(data.githubLink)}
-                        borderRadius='none'
-                        w='10rem'
-                        rightIcon={<FaGithub />}>
-                        Github
-                      </Button>
+                      <Flex gap={3}>
+                        <Button
+                          onClick={() => window.open(data.githubLink)}
+                          borderRadius='sm'
+                          leftIcon={<FaGithub />}>
+                          Github
+                        </Button>
+                        {data.projectLink !== "false" && (
+                          <Button
+                            onClick={() => window.open(data.projectLink)}
+                            borderRadius='sm'
+                            leftIcon={<FaLink />}>
+                            Demo
+                          </Button>
+                        )}
+                      </Flex>
                     </Flex>
                   </Flex>
                 </Box>

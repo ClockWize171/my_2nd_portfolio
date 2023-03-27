@@ -14,7 +14,7 @@ import './AboutMe.css'
 import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
 import { motion } from 'framer-motion'
 import logos from '../../assets/images/Logo'
-import hello3d from '../../assets/images/3d-illu.svg'
+import hello3d from '../../assets/images/3d-illu.png'
 import { FramerCarousel } from '../../components';
 
 const AboutMe = ({ title }) => {
@@ -75,10 +75,9 @@ const AboutMe = ({ title }) => {
             viewport={{ once: true }}
             transition={{ duration: 1.25 }}
             whileInView={{ y: [-100, 0], opacity: [0, 1] }}>
-            <Box>
+            <Box m='auto'>
               <Image
-                m='auto'
-                boxSize='300px'
+                width='20rem'
                 src={hello3d}
                 alt='Hello Image'
               />
@@ -87,13 +86,9 @@ const AboutMe = ({ title }) => {
           <motion.div
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-            whileInView={{ y: [100, 0], opacity: [0, 1] }}
-            whileTap={{ scale: 0.9 }}
-            whileHover={{ scale: 1.05 }}>
+            whileInView={{ y: [100, 0], opacity: [0, 1] }}>
             <Box mt={5}>
               <Button
-                w="10rem"
-                h='3rem'
                 onClick={() => window.open("https://resume.io/r/O8p8INUxy")}
                 borderRadius="sm"
                 variant='outline'

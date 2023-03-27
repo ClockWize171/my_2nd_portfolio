@@ -43,7 +43,7 @@ const Navbar = () => {
                         </Box>,
                             <Text
                                 mt={1}
-                                fontSize={isNotSmallerScreen ? "xl" : "xl"}
+                                fontSize={["lg",'xl','xl']}
                                 fontWeight="bold">
                                 thet_min_htin
                             </Text>

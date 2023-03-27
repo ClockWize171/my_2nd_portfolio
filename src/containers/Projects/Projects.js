@@ -95,17 +95,19 @@ const Project = ({ title }) => {
       </Box>
       {isLoading ? (
         <>
-          <Box pt={2} align='center'>
-            <Breadcrumb separator="/" >
+          <Box pt={5} align='center'>
+            <Breadcrumb separator="|" >
               {['All', 'Data Science', 'Web Application', 'Python', 'React'].map((item, index) => (
-                <BreadcrumbItem pt={5} key={index}>
+                <BreadcrumbItem key={index} mt={[5, 0, 0]}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}>
                     <BreadcrumbLink
-                      fontWeight="bold"
-                      padding={1}
-                      borderWidth={activeFilter === item ? '3px' : '0px'}
+                      _hover={{ textDecor: 'none' }}
+                      fontWeight={activeFilter === item ? 'bold' : 'regular'}
+                      padding={1.5}
+                      borderWidth={activeFilter === item ? '2px' : '0px'}
+                      borderRadius="sm"
                       onClick={() => handleProjectFilter(item)}>
                       {item}
                     </BreadcrumbLink>
@@ -117,7 +119,7 @@ const Project = ({ title }) => {
 
           <SimpleGrid
             paddingTop={10}
-            columns={[1, null, 3]}
+            columns={[1, 2, 2, 3]}
             spacing='50px'>
             {filterWork.map((project, index) => (
               <motion.div

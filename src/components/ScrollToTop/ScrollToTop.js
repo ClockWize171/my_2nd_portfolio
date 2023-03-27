@@ -31,7 +31,6 @@ const ScrollToTop = () => {
           });
     }
 
-
     return (
         <motion.div
             style={{
