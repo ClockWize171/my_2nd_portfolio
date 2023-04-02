@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Text,
@@ -9,7 +10,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react';
+import fallbackImg from '../../assets/images/placeholder.webp'
 import { client, urlFor } from '../../client';
 import { FaGithub, FaLink } from 'react-icons/fa';
 import FramerCarousel from '../FramerCarousel/FramerCarousel';
@@ -76,7 +77,7 @@ const RecentProject = () => {
                         h={['13rem', '20rem']}
                         objectFit='cover'
                         src={urlFor(data.imgUrl)}
-                        fallbackSrc="https://via.placeholder.com/240"
+                        fallbackSrc={fallbackImg}
                         alt='project-image'
                       />
                     </Box>
