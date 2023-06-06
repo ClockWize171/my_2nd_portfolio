@@ -61,9 +61,8 @@ const AboutMe = ({ title }) => {
                   textAlign="justify"
                   fontWeight="medium"
                   fontSize={isNotSmallerScreen ? "lg" : "md"}>
-                  Welcome mate 😃, I am Burmese and from Myanmar(Yangon-based).
-                  I emphasized professionalism in IT fields. I did nearly most parts of the IT fields such as web development, scripting, networking, system administration,
-                  machine learning and etc.
+                  Welcome mate 😃, I am Burmese and from Myanmar (Yangon-based).
+                  I walked my career path as professionalism in IT fields. Currently, I am learning front-end web developement, especially in REACT.
                 </Text>
               </Box>
             </motion.div>
