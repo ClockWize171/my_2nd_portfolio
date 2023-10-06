@@ -25,13 +25,16 @@ const Timeline = () => {
         },
         {
             place: <h3>B.Sc (Hons) Computing, Edinburgh Napier University </h3>,
-            time: isNotSmallerScreen ? <strong>2019 - 2022</strong> : <strong>2022 - 2019</strong>
+            time: isNotSmallerScreen ? <strong>2019 - 2022</strong> : <strong>2019 - 2022</strong>
         },
         {
             place: <h3>Frontend Developer at <Link color={useColorModeValue("#0900C3", '#0075F6')}><br />BEYOND BRANDS</Link> </h3>,
             time: isNotSmallerScreen ? <strong>2022 Sep - 2022 Oct</strong> : <strong>2022 Sep - 2022 Oct</strong>
         },
-
+        {
+            place: <h3>M.Sc Computing, Edinburgh Napier University </h3>,
+            time: isNotSmallerScreen ? <strong>2023 - Present</strong> : <strong>2023 - Present</strong>
+        },
     ]
 
     return (

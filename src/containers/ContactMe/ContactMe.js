@@ -24,7 +24,6 @@ const ContactMe = ({ title }) => {
 
     useEffect(() => { document.title = title }, [title])
 
-
     const intialFormState = {
         email: '',
         name: '',

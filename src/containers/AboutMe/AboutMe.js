@@ -61,7 +61,7 @@ const AboutMe = ({ title }) => {
                   textAlign="justify"
                   fontWeight="medium"
                   fontSize={isNotSmallerScreen ? "lg" : "md"}>
-                  Welcome mate 😃, I am Burmese and from Myanmar (Yangon-based).
+                  Welcome mate 😃, I am Burmese and currently in Edinburgh, Scotland.
                   I walked my career path as professionalism in IT fields. Currently, I am learning front-end web developement, especially in REACT.
                 </Text>
               </Box>
