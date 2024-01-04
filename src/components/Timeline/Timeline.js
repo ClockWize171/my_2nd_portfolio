@@ -52,8 +52,9 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
                 whileInView={{ x: [-100, 0], opacity: [0, 1] }}>
-                {data.map((i) => (
+                {data.map((myInfo, index) => (
                     <div
+                        key={index}
                         className="timeline-block timeline-block-right">
                         <Box
                             bg={isDark ? '#086F83' : "#C3E0E5"}
@@ -63,8 +64,8 @@ const Timeline = () => {
                             transition={{ duration: 1.5 }}
                             whileInView={{ x: [100, 0], opacity: [0, 1] }}
                             className="timeline-content">
-                            {i.place}
-                            {i.time}
+                            {myInfo.place}
+                            {myInfo.time}
                         </motion.div>
                     </div>
                 ))}
