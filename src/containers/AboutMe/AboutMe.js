@@ -11,7 +11,7 @@ import {
   useMediaQuery
 } from '@chakra-ui/react'
 import './AboutMe.css'
-import { BsLink45Deg, BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsDownload } from "react-icons/bs";
 import { motion } from 'framer-motion'
 import logos from '../../assets/images/Logo'
 import hello3d from '../../assets/images/3d-illu.png'
@@ -88,11 +88,12 @@ const AboutMe = ({ title }) => {
             whileInView={{ y: [100, 0], opacity: [0, 1] }}>
             <Box mt={5}>
               <Button
-                onClick={() => window.open("https://resume.io/r/O8p8INUxy")}
+                id='cv_download'
+                onClick={() => window.open("/pdf/myCV.pdf", "_blank", "noopener,noreferrer")}
                 borderRadius="sm"
                 variant='outline'
                 colorScheme="cyan">
-                Resume. <Icon ml={1} as={BsLink45Deg} />
+                Download CV&nbsp;<Icon ml={1} as={BsDownload} />
               </Button>
             </Box>
           </motion.div>

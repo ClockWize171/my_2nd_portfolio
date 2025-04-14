@@ -33,7 +33,7 @@ const Timeline = () => {
         },
         {
             place: <h3>M.Sc Computing, Edinburgh Napier University </h3>,
-            time: isNotSmallerScreen ? <strong>2023 - Present</strong> : <strong>2023 - Present</strong>
+            time: isNotSmallerScreen ? <strong>2023 - 2024</strong> : <strong>2023 - 2024</strong>
         },
     ]
 
